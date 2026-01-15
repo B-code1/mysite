@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720">
+  <defs>
+    <linearGradient id="chat-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="pulse" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#f472b6"/>
+    </linearGradient>
+    <linearGradient id="card-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#chat-bg)"/>
+  <circle cx="280" cy="520" r="200" fill="#312e81" opacity="0.25"/>
+  <circle cx="1000" cy="180" r="220" fill="#14b8a6" opacity="0.15"/>
+  <g transform="translate(200 160)">
+    <rect width="800" height="400" rx="48" fill="#0b1222" stroke="#1d4ed8" stroke-width="3" opacity="0.9"/>
+    <text x="60" y="120" font-family="'Space Grotesk','Segoe UI',sans-serif" font-size="58" fill="#e0f2fe">Twilio + Gemini bot</text>
+    <text x="60" y="168" font-family="'Inter','Segoe UI',sans-serif" font-size="26" fill="#94a3b8">WhatsApp automation in 3 calls</text>
+    <g transform="translate(60 210)">
+      <rect width="320" height="140" rx="28" fill="#111a2d" stroke="#38bdf8" stroke-width="2"/>
+      <text x="32" y="64" font-family="'Inter','Segoe UI',sans-serif" font-size="22" fill="#bae6fd">Inbound</text>
+      <text x="32" y="104" font-family="'Space Grotesk','Segoe UI',sans-serif" font-size="36" fill="#38bdf8">Hey Gemini!</text>
+    </g>
+    <g transform="translate(420 210)">
+      <rect width="320" height="140" rx="28" fill="#111a2d" stroke="#f472b6" stroke-width="2"/>
+      <text x="32" y="64" font-family="'Inter','Segoe UI',sans-serif" font-size="22" fill="#fbcfe8">Outbound</text>
+      <text x="32" y="104" font-family="'Space Grotesk','Segoe UI',sans-serif" font-size="36" fill="#f472b6">Typed reply</text>
+    </g>
+  </g>
+  <g transform="translate(160 600)">
+    <rect width="360" height="100" rx="28" fill="url(#card-dark)" opacity="0.95"/>
+    <text x="36" y="62" font-family="'Space Grotesk','Segoe UI',sans-serif" font-size="32" fill="#f8fafc">Realtime ngrok tunneling</text>
+  </g>
+  <g transform="translate(1040 520)">
+    <rect x="-140" y="-120" width="200" height="200" rx="32" fill="#0b1222" stroke="#f472b6" stroke-width="3"/>
+    <path d="M-80 -20h120" stroke="url(#pulse)" stroke-width="8" stroke-linecap="round"/>
+    <path d="M-80 20h80" stroke="url(#pulse)" stroke-width="8" stroke-linecap="round" opacity="0.7"/>
+    <circle cx="-40" cy="-40" r="12" fill="#38bdf8"/>
+    <circle cx="40" cy="40" r="12" fill="#f472b6"/>
+  </g>
+</svg>

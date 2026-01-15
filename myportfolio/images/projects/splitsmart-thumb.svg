@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0f2ff"/>
+      <stop offset="55%" stop-color="#c7d2fe"/>
+      <stop offset="100%" stop-color="#fee2f2"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#312e81"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f472b6" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <circle cx="250" cy="220" r="160" fill="#93c5fd" opacity="0.3"/>
+  <circle cx="980" cy="150" r="120" fill="#f9a8d4" opacity="0.35"/>
+  <circle cx="1010" cy="560" r="180" fill="#bfdbfe" opacity="0.35"/>
+  <g transform="translate(320 120)">
+    <rect x="0" y="0" width="560" height="360" rx="48" fill="white" opacity="0.95" stroke="#e0e7ff" stroke-width="4"/>
+    <text x="48" y="90" font-family="'Poppins', 'Segoe UI', sans-serif" font-size="52" font-weight="600" fill="#0f172a">SplitSmart</text>
+    <text x="48" y="150" font-family="'Inter', 'Segoe UI', sans-serif" font-size="26" fill="#475569">Group expense insights</text>
+    <line x1="48" y1="190" x2="512" y2="190" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="8 12"/>
+    <g transform="translate(48 220)">
+      <rect width="200" height="100" rx="24" fill="url(#card)"/>
+      <text x="32" y="58" font-family="'Space Grotesk', 'Segoe UI', sans-serif" font-size="42" fill="white">$482</text>
+      <text x="34" y="84" font-family="'Inter', 'Segoe UI', sans-serif" font-size="20" fill="#c7d2fe">This month</text>
+    </g>
+    <g transform="translate(280 220)">
+      <rect width="200" height="100" rx="24" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+      <text x="26" y="60" font-family="'Space Grotesk', 'Segoe UI', sans-serif" font-size="44" fill="#1e293b">62%</text>
+      <text x="26" y="86" font-family="'Inter', 'Segoe UI', sans-serif" font-size="20" fill="#475569">Paid</text>
+    </g>
+    <path d="M420 60c70 0 90 90 18 118s-200 32-256 80" fill="none" stroke="#38bdf8" stroke-width="10" stroke-linecap="round" stroke-dasharray="20 18"/>
+  </g>
+  <g transform="translate(120 470)" opacity="0.9">
+    <circle cx="0" cy="0" r="90" fill="none" stroke="url(#ring)" stroke-width="14" stroke-dasharray="40 24"/>
+    <text x="-58" y="14" font-family="'Space Grotesk', 'Segoe UI', sans-serif" font-size="42" fill="#0f172a">Split</text>
+  </g>
+  <g transform="translate(1080 420)">
+    <rect x="-110" y="-70" width="220" height="140" rx="32" fill="white" opacity="0.9" stroke="#c7d2fe" stroke-width="2"/>
+    <text x="-80" y="-10" font-family="'Inter', 'Segoe UI', sans-serif" font-size="28" fill="#0f172a">Roommates</text>
+    <text x="-80" y="32" font-family="'Space Grotesk', 'Segoe UI', sans-serif" font-size="38" fill="#2563eb">4</text>
+  </g>
+</svg>

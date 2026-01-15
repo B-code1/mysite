@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biwott_portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+    <style>
+        :root {
+            color-scheme: light;
+        }
+        .text-on-light {
+            color: #0f172a !important;
+        }
+        body.dark-mode {
+            color-scheme: dark;
+            background-color: #020617;
+            color: #e2e8f0;
+        }
+        .theme-surface {
+            transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease;
+        }
+        body.dark-mode .theme-surface {
+            background: rgba(15,23,42,0.8);
+            border-color: rgba(148,163,184,0.35);
+            color: #e2e8f0;
+        }
+        .card-surface {
+            transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+        body.dark-mode .card-surface {
+            background: rgba(15,23,42,0.6);
+            border-color: rgba(148,163,184,0.35);
+            box-shadow: 0 25px 45px rgba(2,6,23,0.4);
+        }
+        body.dark-mode p,
+        body.dark-mode li,
+        body.dark-mode span,
+        body.dark-mode .text-gray-900,
+        body.dark-mode .text-gray-800,
+        body.dark-mode .text-gray-700,
+        body.dark-mode .text-gray-600,
+        body.dark-mode .text-gray-500,
+        body.dark-mode .text-slate-900,
+        body.dark-mode .text-slate-800,
+        body.dark-mode .text-slate-700,
+        body.dark-mode .text-slate-600 {
+            color: #cbd5f5 !important;
+        }
+        body.dark-mode .text-on-light {
+            color: #e2e8f0 !important;
+        }
+        body.dark-mode a {
+            color: #93c5fd;
+        }
+        body.dark-mode #about,
+        body.dark-mode #work {
+            background: radial-gradient(circle at top, rgba(37,99,235,0.25), rgba(2,6,23,0.85) 55%)
+                , linear-gradient(180deg, rgba(15,23,42,0.9), rgba(2,6,23,0.95));
+        }
+        body.dark-mode #about > .relative {
+            background: rgba(2,6,23,0.9);
+            border-color: rgba(148,163,184,0.35);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+        }
+        body.dark-mode #work article {
+            background: rgba(15,23,42,0.85);
+            border-color: rgba(148,163,184,0.45);
+            box-shadow: 0 25px 60px rgba(2,6,23,0.6);
+        }
+        body.dark-mode #index {
+            background: radial-gradient(circle at 20% 20%, rgba(59,130,246,0.25), rgba(2,6,23,0.9))
+                , linear-gradient(160deg, rgba(15,23,42,0.92), rgba(2,6,23,0.97));
+            border-color: rgba(148,163,184,0.35);
+            box-shadow: 0 40px 80px rgba(2,6,23,0.7);
+        }
+        body.dark-mode #index .rounded-\[32px\] {
+            border-color: rgba(148,163,184,0.35);
+        }
+        body.dark-mode .service-card {
+            background: rgba(15,23,42,0.85);
+            border-color: rgba(148,163,184,0.5);
+            box-shadow: 0 20px 45px rgba(2,6,23,0.55);
+            color: #e2e8f0;
+        }
+        body.dark-mode .service-card:hover {
+            background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(244,114,182,0.2));
+            border-color: rgba(191,219,254,0.6);
+        }
+        body.dark-mode #contact {
+            background: radial-gradient(circle at top, rgba(56,189,248,0.25), rgba(2,6,23,0.92))
+                , linear-gradient(180deg, rgba(15,23,42,0.95), rgba(2,6,23,0.98));
+        }
+        body.dark-mode #contact h4,
+        body.dark-mode #contact h2,
+        body.dark-mode #contact p {
+            color: #e0f2fe !important;
+        }
+        .contact-cta {
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+        body.dark-mode .contact-cta {
+            background: rgba(15,23,42,0.85);
+            border-color: rgba(148,163,184,0.6);
+            color: #e2e8f0;
+            box-shadow: 0 15px 35px rgba(2,6,23,0.6);
+        }
+        body.dark-mode .contact-cta:hover {
+            border-color: rgba(96,165,250,0.9);
+            background: linear-gradient(135deg, rgba(14,165,233,0.25), rgba(129,140,248,0.25));
+        }
+        body.dark-mode #about ul li {
+            background: rgba(15,23,42,0.75) !important;
+            border-color: rgba(148,163,184,0.45) !important;
+        }
+        body.dark-mode #about ul li span {
+            background: rgba(30,41,59,0.85) !important;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <div class="fixed top-0 w-11/12 -z-10 translate-y-[-80%]">
+        <img src="./images/header-bg-color.png" alt="" class="w-full">
+    </div>
+    <nav class="w-full fixed top-0 left-0 px-4 md:px-8 xl:px-[10%] py-4 flex justify-between items-center z-50 bg-gradient-to-r from-white/90 via-white/60 to-white/80 border border-white/50 shadow-[0_18px_45px_rgba(15,23,42,0.08)] backdrop-blur-2xl theme-surface">
+        <img src="./images/logo.jpg" alt="logo" class="w-28 cursor-pointer mr-6 drop-shadow-sm">
+        <ul class="hidden md:flex items-center gap-5 lg:gap-8 rounded-full px-8 py-2.5 bg-white/70 border border-white/70 shadow-lg">
+            <li><a href="#index" class="text-sm font-semibold tracking-wide text-slate-600 hover:text-slate-900 transition">Home</a></li>
+            <li><a href="#about" class="text-sm font-semibold tracking-wide text-slate-600 hover:text-slate-900 transition">About</a></li>
+            <li><a href="#services" class="text-sm font-semibold tracking-wide text-slate-600 hover:text-slate-900 transition">Services</a></li>
+            <li><a href="#work" class="text-sm font-semibold tracking-wide text-slate-600 hover:text-slate-900 transition">My work</a></li>
+            <li><a href="#contact" class="text-sm font-semibold tracking-wide text-slate-600 hover:text-slate-900 transition">Contact me</a></li>
+        </ul>
+        <div class="flex items-center gap-3">
+            <button id="themeToggle" aria-label="Toggle color theme" aria-pressed="false" class="border border-gray-200 rounded-full px-3 py-2 hover:bg-gray-100 transition flex items-center gap-2">
+                <span id="themeToggleIcon" class="text-xl leading-none">🌙</span>
+                <span class="sr-only">Toggle theme</span>
+            </button>
+            <a href="#contact" class="hidden lg:flex items-center gap-3 px-8 py-2.5 border border-gray-300 rounded-full bg-white/70 text-slate-700 font-medium shadow-sm hover:-translate-y-0.5 hover:border-gray-500 transition">
+                Contact
+                <img src="./images/arrow.png" alt="" class="w-4 h-4">
+            </a>
+            <button class="block md:hidden ml-3 rounded-full border border-gray-200 p-2 shadow-sm" onclick="openMenu()">
+                <img src="./images/menu-black.png" alt="" class="w-6">
+            </button>
+        </div>
+        <!-- mobile menu -->
+         <ul id="sideMenu" class="flex md:hidden flex-col py-20
+         fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50
+         transition duration-500">
+         <div class="absolute right-6 top-6" onclick="closeMenu()">
+            <img src="./images/close-black.png" alt="" class="w-5">
+         </div>
+            <li><a href="#index" onclick="closeMenu()">Home</a></li>
+            <li><a href="#about" onclick="closeMenu()">About</a></li>
+            <li><a href="#services" onclick="closeMenu()">Services</a></li>
+            <li><a href="#work" onclick="closeMenu()">My work</a></li>
+            <li><a href="#contact" onclick="closeMenu()">Contact me</a></li>
+         </ul>
+       
+    </nav>
+    
+    <!-- Header section -->
+    <div id="index" class="relative w-11/12 max-w-6xl text-center lg:text-left mx-auto min-h-screen flex items-center justify-center pt-32 pb-12 overflow-hidden rounded-[40px] border border-white/50 bg-white/85 shadow-2xl backdrop-blur theme-surface">
+        <div class="absolute -z-10 w-[360px] h-[360px] bg-gradient-to-r from-blue-200/70 via-transparent to-transparent blur-3xl -top-12 -left-8"></div>
+        <div class="absolute -z-10 w-[320px] h-[320px] bg-gradient-to-l from-rose-200/70 via-transparent to-transparent blur-3xl bottom-0 right-[-40px]"></div>
+        <div class="flex flex-col items-center gap-12 w-full">
+            <div class="w-full space-y-6 text-center">
+                <h3 class="flex items-center justify-center gap-2 text-2xl text-gray-800">
+                    Hello, I'm Biwott
+                </h3>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold leading-tight text-gray-900">
+                    Full-Stack Software Engineer
+                </h1>
+                <p class="max-w-2xl mx-auto text-gray-600 text-lg">
+                    I build resilient, elegant web platforms that move from idea to production fast—pairing scalable cloud backends with delightful user experiences and transparent GitHub workflows.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="https://github.com/B-code1?tab=repositories" target="_blank" class="px-10 py-3 rounded-full bg-gradient-to-r from-indigo-500 to-blue-600 text-white font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition flex items-center gap-2">
+                        View GitHub Portfolio
+                        <img src="./images/right-arrow-white.png" alt="" class="w-4">
+                    </a>
+                    <a href="#contact" class="px-10 py-3 rounded-full border border-gray-300 bg-white/70 text-slate-800 font-medium shadow hover:border-gray-500 hover:-translate-y-0.5 transition flex items-center gap-2">
+                        Book a Call
+                        <img src="./images/right-arrow-white.png" alt="" class="w-4">
+                    </a>
+                    <a href="CURRICULUM VITAE.docx" download class="px-10 py-3 rounded-full bg-gray-900 text-white font-medium shadow hover:bg-black flex items-center gap-2">
+                        Download Resume
+                        <img src="./images/download-icon.png" alt="" class="w-4">
+                    </a>
+                </div>
+            </div>
+            <div class="w-full">
+                <div class="rounded-[32px] border border-white/70 bg-gradient-to-br from-white/95 via-blue-50/60 to-rose-50/70 p-8 shadow-[0_30px_60px_rgba(15,23,42,0.1)] backdrop-blur card-surface">
+                    <p class="text-xs uppercase tracking-[0.5em] text-gray-500 mb-6">Delivery metrics</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="rounded-2xl border border-white/70 bg-white/85 p-5 shadow-inner card-surface">
+                            <p class="text-4xl font-semibold text-gray-900">15+</p>
+                            <p class="text-xs uppercase tracking-wide text-gray-500 mt-1">GitHub projects</p>
+                        </div>
+                        <div class="rounded-2xl border border-white/70 bg-white/85 p-5 shadow-inner card-surface">
+                            <p class="text-4xl font-semibold text-gray-900">4</p>
+                            <p class="text-xs uppercase tracking-wide text-gray-500 mt-1">SaaS launches</p>
+                        </div>
+                        <div class="rounded-2xl border border-white/70 bg-white/85 p-5 shadow-inner card-surface">
+                            <p class="text-4xl font-semibold text-gray-900">100%</p>
+                            <p class="text-xs uppercase tracking-wide text-gray-500 mt-1">Remote ready</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ------about----- -->
+    <div id="about" class="w-full px-[10%] xl:px-[12%] py-20 scroll-mt-20 bg-gradient-to-b from-white via-blue-50/20 to-white">
+        <div class="text-center space-y-2">
+            <h4 class="text-sm font-semibold tracking-[0.3em] text-slate-500 uppercase">Introduction</h4>
+            <h2 class="text-5xl font-semibold text-slate-900">About me</h2>
+            <p class="max-w-3xl mx-auto text-lg text-slate-600">I translate complex product ideas into cohesive experiences backed by resilient infrastructure.</p>
+        </div>
+        <div class="relative mt-12 rounded-[32px] border border-white/60 bg-white/80 shadow-[0_25px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl overflow-hidden">
+            <div class="absolute -left-10 top-8 w-64 h-64 bg-blue-200/30 blur-3xl"></div>
+            <div class="absolute -right-6 -bottom-6 w-60 h-60 bg-rose-200/30 blur-3xl"></div>
+            <div class="relative z-10 grid gap-16 lg:grid-cols-[1.1fr_0.9fr] p-10 lg:p-14">
+                <div class="space-y-8">
+                    <p class="text-lg leading-8 text-slate-600 border-l-4 border-blue-500/60 pl-6">
+                        I am a software developer with a passion for creating innovative solutions to everyday problems.
+                         I am a self-taught developer with a background in computer science and a passion for learning new technologies.
+                          I have experience in web development, mobile development, and desktop development.
+                         I am always looking for new challenges and opportunities to grow as a developer.
+                           I am a quick learner and a team player. I am always looking for ways to improve my skills and learn new technologies.
+                    </p>
+                    <div class="space-y-4">
+                        <h4 class="text-base font-semibold tracking-wide text-slate-700 uppercase">Tools I Use</h4>
+                        <ul class="flex flex-wrap gap-3 sm:gap-4 text-sm font-semibold uppercase tracking-wide text-slate-600">
+                            <li class="flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-300 bg-white/80 text-on-light">
+                                <span class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center">
+                                    <img src="./images/vscode.png" alt="VS Code" class="w-5 h-5">
+                                </span>
+                                VS Code
+                            </li>
+                            <li class="flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-300 bg-white/80 text-on-light">
+                                <span class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center">
+                                    <img src="./images/mongodb.png" alt="MongoDB" class="w-5 h-5">
+                                </span>
+                                MongoDB
+                            </li>
+                            <li class="flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-300 bg-white/80 text-on-light">
+                                <span class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center">
+                                    <img src="./images/figma.png" alt="Figma" class="w-5 h-5">
+                                </span>
+                                Figma
+                            </li>
+                            <li class="flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-300 bg-white/80 text-on-light">
+                                <span class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center">
+                                    <img src="./images/git.png" alt="Git" class="w-5 h-5">
+                                </span>
+                                Git
+                            </li>
+                            <li class="flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-300 bg-white/80 text-on-light">
+                                <span class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center">
+                                    <img src="./images/firebase.png" alt="Firebase" class="w-5 h-5">
+                                </span>
+                                Firebase
+                            </li>
+                        </ul>
+                        <ul class="flex flex-wrap gap-3 sm:gap-4 mt-6 text-sm font-semibold uppercase tracking-wide text-slate-600">
+                            <li class="flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-300 bg-white/80 text-on-light">
+                                <span class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-700">
+                                    <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
+                                        <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                                        <path d="M9 9l6 6m0-6v6"></path>
+                                    </svg>
+                                </span>
+                                Next.js
+                            </li>
+                            <li class="flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-300 bg-white/80 text-on-light">
+                                <span class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-700">
+                                    <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor">
+                                        <path d="M12 6c-3 0-4.5 1.8-5.5 4 1-1 2.2-1.5 3.5-1.5 2.1 0 3.1 1.2 3.8 2.5 1-2.2 2.5-4 5.2-4-1 1-2.2 1.5-3.5 1.5-2.1 0-3.1-1.2-3.5-2.5zM6 14c-3 0-4.5 1.8-5.5 4 1-1 2.2-1.5 3.5-1.5 2.1 0 3.1 1.2 3.8 2.5 1-2.2 2.5-4 5.2-4-1 1-2.2 1.5-3.5 1.5-2.1 0-3.1-1.2-3.5-2.5z"></path>
+                                    </svg>
+                                </span>
+                                Tailwind
+                            </li>
+                            <li class="flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-300 bg-white/80 text-on-light">
+                                <span class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-700">
+                                    <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
+                                        <path d="M12 2l8.5 5v10L12 22l-8.5-5V7z"></path>
+                                        <path d="M9.5 9h5v3.5c0 1.4-1.2 2.5-2.5 2.5s-2.5-1.1-2.5-2.5"></path>
+                                    </svg>
+                                </span>
+                                Node.js
+                            </li>
+                            <li class="flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-300 bg-white/80 text-on-light">
+                                <span class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-700">
+                                    <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                                        <rect x="3" y="12" width="3" height="3" rx="0.5"></rect>
+                                        <rect x="7" y="12" width="3" height="3" rx="0.5"></rect>
+                                        <rect x="11" y="12" width="3" height="3" rx="0.5"></rect>
+                                        <rect x="7" y="8" width="3" height="3" rx="0.5"></rect>
+                                        <rect x="11" y="8" width="3" height="3" rx="0.5"></rect>
+                                        <path d="M3 16.5h12.5a4 4 0 0 0 3.9-3.3l.3-1.2h-2.5"></path>
+                                        <path d="M18 12c.9 0 2-.7 2-2 0-.8-.3-1.4-.8-1.8"></path>
+                                    </svg>
+                                </span>
+                                Docker
+                            </li>
+                            <li class="flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-300 bg-white/80 text-on-light">
+                                <span class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-700">
+                                    <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
+                                        <path d="M4 18L11 4l3 6-7 8h13"></path>
+                                    </svg>
+                                </span>
+                                Azure
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="relative flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <div class="absolute inset-0 rounded-[36px] border border-white/60 bg-gradient-to-br from-blue-50 via-white to-rose-50 shadow-[0_20px_45px_rgba(15,23,42,0.1)]"></div>
+                        <img src="./images/about.png" alt="Professional headshot of Biwott" class="relative z-10 w-full h-full object-cover rounded-[32px] shadow-2xl">
+                        <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 w-40 h-40 rounded-full bg-white shadow-xl flex items-center justify-center">
+                            <img src="./images/circular-text.png" alt="" class="w-full">
+                            <img src="./images/dev-icon.png" alt="" class="w-1/4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- services -->
+     <div id="services" class="w-full px-[12%] scroll-mt-20">
+       <h4 class="text-center mb-2 text-lg">What I Offer</h4>
+        <h2 class="text-center text-5xl">My services</h2>
+        <p class="text-center max-w-2xl mx-auto mt-5 mb-12">
+            I offer a range of services to help you build your online presence and grow your business.
+             Whether you need a website, mobile app, or desktop application, I can help you bring your ideas to life.
+              I have experience in web development, mobile development, 
+              and desktop development, and I am always looking for new challenges and opportunities to grow as a developer.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 my-10">
+                <div class="service-card border border-gray-400 rounded-lg p-6 shadow-md px-8 py-12
+            hover:shadow-[4px_4px_0_#000] cursor-pointer hover:bg-rose-50 hover:-translate-y-1
+         duration-500">
+                <img src="./images/web-icon.png" alt="" class="w-10">
+                <h3 class="text-lg my-4 text-gray-700">
+                    Web Development
+                </h3>
+                <p class="text-sm text-gray-600 leading-5" >
+                    Craft performant web platforms end-to-end—from component-driven interfaces to observability-ready APIs tuned for growth.
+                </p>
+                <a href="#" class="flex items-center gap-2 text-sm
+                mt-5 ">Readmore</a>
+
+            </div>
+                <div class="service-card border border-gray-400 rounded-lg p-6 shadow-md px-8 py-12
+            hover:shadow-[4px_4px_0_#000] cursor-pointer hover:bg-rose-50 hover:-translate-y-1
+         duration-500">
+                <img src="./images/mobile-icon.png" alt="" class="w-10">
+                <h3 class="text-lg my-4 text-gray-700">
+                    Mobile Development
+                </h3>
+                <p class="text-sm text-gray-600 leading-5" >
+                    Deliver native-feeling apps with shared codebases, offline resilience, CI/CD pipelines, and telemetry that keeps releases informed.
+                </p>
+                <a href="#" class="flex items-center gap-2 text-sm
+                mt-5 ">Readmore</a>
+
+            </div>
+                <div class="service-card border border-gray-400 rounded-lg p-6 shadow-md px-8 py-12
+            hover:shadow-[4px_4px_0_#000] cursor-pointer hover:bg-rose-50 hover:-translate-y-1
+         duration-500">
+                <img src="./images/ui-icon.png" alt="" class="w-10">
+                <h3 class="text-lg my-4 text-gray-700">
+                    UI/UX Design
+                </h3>
+                <p class="text-sm text-gray-600 leading-5" >
+                    Translate product vision into research-backed journeys, interaction patterns, and scalable design systems teams can ship with confidence.
+                </p>
+                <a href="#" class="flex items-center gap-2 text-sm
+                mt-5 ">Readmore</a>
+
+            </div>
+                <div class="service-card border border-gray-400 rounded-lg p-6 shadow-md px-8 py-12
+            hover:shadow-[4px_4px_0_#000] cursor-pointer hover:bg-rose-50 hover:-translate-y-1
+         duration-500">
+                <img src="./images/graphics-icon.png" alt="" class="w-10">
+                <h3 class="text-lg my-4 text-gray-700">
+                    Graphic Design
+                </h3>
+                <p class="text-sm text-gray-600 leading-5" >
+                    Build cohesive visual identities, campaign assets, and motion accents that keep marketing and product stories unmistakably on-brand.
+                </p>
+                <a href="#" class="flex items-center gap-2 text-sm
+                mt-5 ">Readmore</a>
+
+            </div>
+                <div class="service-card border border-gray-400 rounded-lg p-6 shadow-md px-8 py-12
+            hover:shadow-[4px_4px_0_#000] cursor-pointer hover:bg-rose-50 hover:-translate-y-1
+         duration-500">
+                <img src="./images/chatbot-icon.png" alt="" class="w-10">
+                <h3 class="text-lg my-4 text-gray-700">
+                    Chatbots & Automation
+                </h3>
+                <p class="text-sm text-gray-600 leading-5" >
+                    Orchestrate AI copilots with secure guardrails, channel integrations, and analytics loops that continuously elevate customer touchpoints.
+                </p>
+                <a href="#" class="flex items-center gap-2 text-sm
+                mt-5 ">Readmore</a>
+            </div>
+        </div>
+     </div>
+        <!-- work -->
+         <div id="work" class="w-full px-[12%] py-10 scroll-mt-20">
+        <h4 class="text-center mb-2 text-lg">Recent GitHub Deploys</h4>
+        <h2 class="text-center text-5xl">Featured case studies</h2>
+        <p class="text-center max-w-3xl mx-auto mt-5 mb-12 text-gray-600">
+            Each repository below captures my approach to product thinking, clean architecture, automated quality gates, and documentation you can audit directly on GitHub.
+        </p>
+        <div class="grid gap-8">
+            <article class="border border-gray-200 rounded-3xl p-8 shadow-sm hover:-translate-y-1 hover:shadow-xl duration-300 bg-white/80 backdrop-blur">
+        <div class="flex flex-wrap items-center justify-between text-sm text-gray-500 mb-3">
+            <span>SplitSmart</span>
+            <span>FinTech • 2024</span>
+        </div>
+        <img src="./images/projects/splitsmart-thumb.svg" alt="SplitSmart group expense mobile screens" class="w-full rounded-2xl mb-6 border border-gray-100 shadow-inner">
+        <h3 class="text-2xl font-semibold mb-3 text-gray-900">SplitSmart group expense app</h3>
+        <p class="text-gray-600">
+            Full-stack app built with Expo Router, React Native, and TypeScript that guides roommates and travel crews through creating groups, fetching live membership data from <code>splitsmart-project.onrender.com</code>, orchestrating multi-rail payment requests, and collecting feedback/support inside the app so finance flows stay transparent.
+        </p>
+        <ul class="flex flex-wrap gap-2 text-xs uppercase tracking-wide text-gray-500 mt-5">
+            <li class="px-3 py-1 bg-gray-100 rounded-full">React Native</li>
+            <li class="px-3 py-1 bg-gray-100 rounded-full">Expo Router</li>
+            <li class="px-3 py-1 bg-gray-100 rounded-full">TypeScript</li>
+            <li class="px-3 py-1 bg-gray-100 rounded-full">AsyncStorage</li>
+            <li class="px-3 py-1 bg-gray-100 rounded-full">Render API</li>
+        </ul>
+        <div class="flex flex-wrap gap-4 mt-6">
+            <a href="https://splitsmart-project.onrender.com" target="_blank" class="px-5 py-2 rounded-full border border-gray-900 text-gray-900 flex items-center gap-2 hover:bg-gray-900 hover:text-white">
+                Live demo
+                <img src="./images/send-icon.png" alt="" class="w-4">
+            </a>
+            <a href="https://github.com/B-code1/SplitSmart_app" target="_blank" class="px-5 py-2 rounded-full border border-gray-300 text-gray-700 flex items-center gap-2 hover:border-gray-500">
+                GitHub repo
+                <img src="./images/right-arrow-white.png" alt="" class="w-4 invert">
+            </a>
+        </div>
+    </article>
+            <article class="border border-gray-200 rounded-3xl p-8 shadow-sm hover:-translate-y-1 hover:shadow-xl duration-300 bg-white/80 backdrop-blur">
+                <!-- Clinicore -->
+                <div class="flex flex-wrap items-center justify-between text-sm text-gray-500 mb-3">
+                    <span>Clinicore</span>
+                    <span>mHealth • 2024</span>
+                </div>
+                <img src="./images/projects/clinicore-thumb.svg" alt="Clinicore React Native app dashboard preview" class="w-full rounded-2xl mb-6 border border-gray-100 shadow-inner">
+                <h3 class="text-2xl font-semibold mb-3 text-gray-900">Clinicore mobile care hub</h3>
+                <p class="text-gray-600">
+                    Full-stack app built with React Native (Expo Router) and Firebase that lets patients manage rich profiles, track medical conditions, review care history, and reserve specialist appointments in one workflow. Firestore-backed editing, AI-informed doctor suggestions, and the appointment booking/cancellation modal keep the experience responsive even when doctor data falls back to curated mocks.
+                </p>
+                <ul class="flex flex-wrap gap-2 text-xs uppercase tracking-wide text-gray-500 mt-5">
+                    <li class="px-3 py-1 bg-gray-100 rounded-full">React Native</li>
+                    <li class="px-3 py-1 bg-gray-100 rounded-full">Expo Router</li>
+                    <li class="px-3 py-1 bg-gray-100 rounded-full">Firebase Auth</li>
+                    <li class="px-3 py-1 bg-gray-100 rounded-full">Firestore</li>
+                </ul>
+                <div class="flex flex-wrap gap-4 mt-6">
+                    <a href="https://expo.dev/@B-code1/clinicore" target="_blank" class="px-5 py-2 rounded-full border border-gray-900 text-gray-900 flex items-center gap-2 hover:bg-gray-900 hover:text-white">
+                        Live demo
+                        <img src="./images/send-icon.png" alt="" class="w-4">
+                    </a>
+                    <a href="https://github.com/B-code1/Patient_record_sytem" target="_blank" class="px-5 py-2 rounded-full border border-gray-300 text-gray-700 flex items-center gap-2 hover:border-gray-500">
+                        GitHub repo
+                        <img src="./images/right-arrow-white.png" alt="" class="w-4 invert">
+                    </a>
+                </div>
+                
+            </article>
+            <article class="border border-gray-200 rounded-3xl p-8 shadow-sm hover:-translate-y-1 hover:shadow-xl duration-300 bg-white/80 backdrop-blur">
+                <!-- Tribute -->
+                <div class="flex flex-wrap items-center justify-between text-sm text-gray-500 mb-3">
+                    <span>Tribute Obituary</span>
+                    <span>Memorial • 2024</span>
+                </div>
+                <img src="./images/projects/tribute-obituary-thumb.svg" alt="Dynamic obituary website hero mockup" class="w-full rounded-2xl mb-6 border border-gray-100 shadow-inner">
+                <h3 class="text-2xl font-semibold mb-3 text-gray-900">Tribute obituary platform</h3>
+                <p class="text-gray-600">
+                    Full-stack website that lets families craft personalized obituaries with gallery sections, remembrance notes, and shareable memorial pages. Each profile ships with Open Graph/Twitter cards, JSON-LD schema, and sitemap hooks so tributes rank well and preview beautifully across social media.
+                </p>
+                <ul class="flex flex-wrap gap-2 text-xs uppercase tracking-wide text-gray-500 mt-5">
+                    <li class="px-3 py-1 bg-gray-100 rounded-full">PHP</li>
+                    <li class="px-3 py-1 bg-gray-100 rounded-full">Tailwind</li>
+                    <li class="px-3 py-1 bg-gray-100 rounded-full">MongoDB</li>
+                    <li class="px-3 py-1 bg-gray-100 rounded-full">SEO / Schema.org</li>
+                </ul>
+                <div class="flex flex-wrap gap-4 mt-6">
+                    <a href="https://tributes-demo.vercel.app" target="_blank" class="px-5 py-2 rounded-full border border-gray-900 text-gray-900 flex items-center gap-2 hover:bg-gray-900 hover:text-white">
+                        Live demo
+                        <img src="./images/send-icon.png" alt="" class="w-4">
+                    </a>
+                    <a href="https://github.com/B-code1/Obituary-website" target="_blank" class="px-5 py-2 rounded-full border border-gray-300 text-gray-700 flex items-center gap-2 hover:border-gray-500">
+                        GitHub repo
+                        <img src="./images/right-arrow-white.png" alt="" class="w-4 invert">
+                    </a>
+                </div>
+            </article>
+            <article class="border border-gray-200 rounded-3xl p-8 shadow-sm hover:-translate-y-1 hover:shadow-xl duration-300 bg-white/80 backdrop-blur">
+                <!-- Chatbot -->
+                <div class="flex flex-wrap items-center justify-between text-sm text-gray-500 mb-3">
+                    <span>Chatbot</span>
+                    <span>AI Ops • 2023</span>
+                </div>
+                <img src="./images/projects/chatbot-gemini-thumb.svg" alt="Screenshot of the Twilio WhatsApp + Gemini assistant" class="w-full rounded-2xl mb-6 border border-gray-100 shadow-inner">
+                <h3 class="text-2xl font-semibold mb-3 text-gray-900">Twilio WhatsApp chatbot</h3>
+                <p class="text-gray-600">
+                    Slim Express webhook that listens to Twilio’s WhatsApp sandbox, relays each inbound message to Google’s Gemini via <code>@google/generative-ai</code>, then pipes the model’s reply back through Twilio in seconds. Ngrok autostarts so the bot stays reachable for live debugging straight from localhost.
+                </p>
+                <ul class="flex flex-wrap gap-2 text-xs uppercase tracking-wide text-gray-500 mt-5">
+                    <li class="px-3 py-1 bg-gray-100 rounded-full">Twilio WhatsApp</li>
+                    <li class="px-3 py-1 bg-gray-100 rounded-full">Express</li>
+                    <li class="px-3 py-1 bg-gray-100 rounded-full">Gemini 1.5 Pro</li>
+                    <li class="px-3 py-1 bg-gray-100 rounded-full">ngrok</li>
+                </ul>
+                <div class="flex flex-wrap gap-4 mt-6">
+                    <a href="https://twilio-gemini-demo.vercel.app" target="_blank" class="px-5 py-2 rounded-full border border-gray-900 text-gray-900 flex items-center gap-2 hover:bg-gray-900 hover:text-white">
+                        Live demo
+                        <img src="./images/send-icon.png" alt="" class="w-4">
+                    </a>
+                    <a href="https://github.com/B-code1/Chatbot" target="_blank" class="px-5 py-2 rounded-full border border-gray-300 text-gray-700 flex items-center gap-2 hover:border-gray-500">
+                        GitHub repo
+                        <img src="./images/right-arrow-white.png" alt="" class="w-4 invert">
+                    </a>
+                </div>
+            </article>
+        </div>
+        <a href="https://github.com/B-code1?tab=repositories" target="_blank" class="w-max flex items-center justify-center gap-2 text-gray-700 border border-gray-500 rounded-full py-3 px-10 mx-auto my-16 hover:bg-gray-900 hover:text-white duration-500">
+            Browse entire GitHub
+            <img src="./images/right-arrow-bold-dark.png" alt="" class="w-4">
+        </a>
+    </div>
+            <!-- contact -->
+            <div id="contact" class="w-full px-[12%] py-10 scroll-mt-20 bg-[url('./images/footer-bg-color.png')] bg-no-repeat bg-[length:90%_auto] bg-center">
+    <h4 class="text-center mb-2 text-lg">Get in touch</h4>
+    <h2 class="text-center text-5xl">Contact me</h2>
+    <p class="max-w-3xl mx-auto text-center text-slate-600">
+        I’m currently booking new collaborations. Reach out through the channel that works best for you and I’ll reply within one business day.
+    </p>
+    <div class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 mt-10">
+        <a href="mailto:jepkemoi75@gmail.com" class="contact-cta inline-flex items-center gap-3 rounded-full border border-slate-300 bg-white/90 px-8 py-3 text-slate-800 font-semibold shadow-sm hover:-translate-y-0.5 hover:border-indigo-400 hover:shadow-lg transition">
+            ✉️ Email me
+        </a>
+        <a href="https://www.linkedin.com/in/belinda-biwott-b75a49288/" target="_blank" class="contact-cta inline-flex items-center gap-3 rounded-full border border-slate-300 bg-white/90 px-8 py-3 text-slate-800 font-semibold shadow-sm hover:-translate-y-0.5 hover:border-sky-500 hover:shadow-lg transition">
+            in Connect on LinkedIn
+        </a>
+        <a href="https://discord.com/users/mia053529" class="contact-cta inline-flex items-center gap-3 rounded-full border border-slate-300 bg-white/90 px-8 py-3 text-slate-800 font-semibold shadow-sm hover:-translate-y-0.5 hover:border-[#5865F2] hover:shadow-lg transition">
+            💬 Chat on Discord
+        </a>
+    </div>
+</div>
+
+    <!-- footer -->
+     <div id="footer" class="bg-[#1a1a1a] text-white  mt-20">
+        <div class="text-center">
+            <img src="./images/logo.jpg" alt="" class="w-36 mx-auto mb-2">
+            <div class="w-max flex justify-center gap-2 mx-auto">
+                <img src="./images/mail_icon.png" alt=""class="w-6">
+        jepkemoi75@gmail.com
+            </div>
+       
+    </div>
+    <div class="text-center sm:flex items-center justify-between
+    border-gray-400 border-t mx-[10%]  my-12 py-6">
+        <p>&copy; 2021 Biwott. All rights reserved.</p>
+        <ul class="flex items-center gap-10 justify-center mt-4 sm:mt-0">
+            <li><a href="https://instagram.com/Biwott">Instagram</a></li>
+            <li><a href="https://www.linkedin.com/in/belinda-biwott-b75a49288/">LinkedIn</a></li>
+            <li><a href="https://instagram.com/Biwott">Twitter</a></li>
+           
+        </ul>
+     </div>
+    </div>
+        
+ 
+<script>
+(function () {
+    const body = document.body;
+    const toggle = document.getElementById('themeToggle');
+    const icon = document.getElementById('themeToggleIcon');
+    if (!toggle || !icon) return;
+
+    const storedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (storedTheme === 'dark' || (!storedTheme && prefersDark)) {
+        body.classList.add('dark-mode');
+    }
+
+    updateState();
+
+    toggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
+        updateState();
+    });
+
+    function updateState() {
+        const isDark = body.classList.contains('dark-mode');
+        toggle.setAttribute('aria-pressed', isDark.toString());
+        icon.textContent = isDark ? '☀️' : '🌙';
+        document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
+    }
+})();
+</script>
+<script src="./script.js"></script>
+</body>
+</html>
